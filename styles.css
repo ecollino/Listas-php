@@ -1,0 +1,143 @@
+body {background: rgb(231, 231, 231); font-family: Helvetica, sans-serif; margin:0;}
+
+/*#region        colors parametrization         */
+:root {
+    --item-bg-clr: black;
+    --item-txt-clr: white;
+    --priority-bg-clr: rgb(58, 58, 58);
+    --item-hv-bg-clr: rgb(0, 35, 133);
+    --item-hv-txt-clr: black;
+} 
+
+/*#endregion*/
+
+/*#region        lists bar      */
+.bar {
+    background-color: var(--item-hv-bg-clr); 
+    width: 100%; 
+    display:flex; 
+    align-items: center; 
+    position: relative;
+    margin-bottom: 0.5%;
+    gap: 0.3em;
+    padding: 0.3em 0.3em;
+}
+.list {
+    display: flex; 
+    color: var(--item-txt-clr);
+    align-items: center;
+    position: relative;
+}
+.bar .list form {display: inline-block;}
+#addlist {
+    background-color: rgb(190, 190, 190);
+    font-size: 25px; 
+    border:none; 
+    border-radius: 2px; 
+    margin:auto 0;}
+#newlist_ok {
+    background-color: rgb(190, 190, 190);
+    font-size: 25px; 
+    border:none; 
+    border-radius: 2px; 
+    padding: 0 5px;
+}
+#newlistname {height: 25px; display:flex; align-items: center;}
+#newlistname input {margin:0 0 0 5px;}
+#newlistname input[type="text"] {height:23px;}
+.list_but {
+    display: inline;
+    border-radius: 2px;
+    background: var(--item-bg-clr);
+    border: none;
+    padding: 0.6em;
+    padding-right: 3em;
+    color:inherit;
+    position: relative;
+    box-sizing: border-box;
+}
+.list_delete_btn {z-index: 1; position: absolute; right:0.4em;}
+.list_but:hover {background-color: rgb(0, 0, 65);}
+#selected_list {background-color:rgb(59, 59, 59);}
+/*#endregion*/
+
+/*#region        tasklist       */
+.task {
+    position:relative;
+    display:flex;
+    align-items:center ;
+    justify-content: space-between;
+    color: var(--item-txt-clr);
+    background-color: rgb(151, 151, 151);
+    padding: 0 0 0 1%;
+    margin: 0.3em auto;
+    font-size: 0.8em;
+    border-radius: 4px; 
+    border: 0.15em solid rgba(0, 0, 0, 100);
+    transition: background-color, border, 0s,0.8s ease-in;
+}
+.task p {margin:0; padding:0;}
+.task:hover {background-color: var(--item-hv-bg-clr); border: 0.15em solid black; color:white;}
+.task form { position:relative; right:-2px; margin:-1px; }
+.task form button {
+    background-color: black;
+    border-radius: 4px;
+    color:rgb(214, 214, 214);
+    font-weight: normal;
+}
+.task form button:hover { background-color: gainsboro; color: black;}
+.alta {background-color: var(--priority-bg-clr); font-weight: bolder; width: 95%;}
+.baja {background-color: var(--item-bg-clr); width:90%; }
+/*#endregion*/
+
+/*#region        new task input         */
+#nueva {
+    margin:10px auto;
+    position:relative;
+    display:flex;
+    margin-left: 5%;
+}
+#nueva input {
+    display:inline;
+    margin: 0 2px;
+}
+#nueva input[type="text"] {margin:0 1% 0 1%; width:25em;}
+#nueva input[type="submit"] {margin:0 0 0 1.5%;}
+#nueva input[type="submit"]:hover + input[type="text"] {display:none;}
+#nueva label {
+    display: inline;
+    height: 18px;
+    width: 6px;
+    border:2px solid transparent;
+}
+#nueva label:before {
+    position:absolute;
+    z-index: -10;
+    content:"";
+    background-color: gray;
+    width: 30em;
+    height: 50px;
+    left:-0.5em;
+    top:-15px;
+    border-radius: 5px;
+}
+#nueva input[type="radio"] {display:none;}
+#nueva input[type="radio"]:checked + label {
+    border: 2px solid rgb(255, 255, 255);
+}
+#nueva input[type="radio"]:checked + label:before {
+    position:absolute;
+    z-index: -1;
+    content:"";
+    background-color: inherit;
+    width: 30em;
+    height: 50px;
+    left:-0.5em;
+    top:-15px;
+    border-radius: 4px;
+    transition: background-color 0.6s ease;
+}
+#high {background-color: var(--priority-bg-clr);}
+#low {background-color: var(--item-bg-clr);}
+
+/*#endregion*/
