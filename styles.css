@@ -8,7 +8,6 @@ body {background: rgb(231, 231, 231); font-family: Helvetica, sans-serif; margin
     --item-hv-bg-clr: rgb(0, 35, 133);
     --item-hv-txt-clr: black;
 } 
-
 /*#endregion*/
 
 /*#region        lists bar      */
@@ -21,6 +20,13 @@ body {background: rgb(231, 231, 231); font-family: Helvetica, sans-serif; margin
     margin-bottom: 0.5%;
     gap: 0.3em;
     padding: 0.3em 0.3em;
+}
+#init_msg {
+    margin:0 0.3em;
+    padding:0.3em;
+    background-color: rgb(252, 255, 220);
+    border-radius: 5px;
+    font-weight: bold;
 }
 .list {
     display: flex; 
